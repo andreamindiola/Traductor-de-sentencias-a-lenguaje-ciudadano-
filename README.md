@@ -104,7 +104,7 @@ JuriEasy es una herramienta basada en inteligencia artificial que busca facilita
 
 Marca cada hito cuando lo termines. Los hitos siguen las sesiones del curso.
 
-- [ ] **M0 — Descripción y plan** *(con Sesión 1)*: Partes 1 y 2 de este README completas.
+- [x] **M0 — Descripción y plan** *(con Sesión 1)*: Partes 1 y 2 de este README completas.
 - [ ] **M1 — Asistente con instrucciones v1** *(Sesión 1–2)*: redactaste las instrucciones (prompt de sistema) de tu asistente y funcionan en una herramienta gratuita de chat.
 - [ ] **M2 — Casos de prueba documentados** *(Sesión 2)*: tienes al menos 5 casos de prueba (donde antes fallaba) con resultados guardados en `docs/casos-de-prueba.md`.
 - [ ] **M3 — Corpus conectado (RAG)** *(Sesión 3)*: tu asistente **cita la fuente** normativa que usa y no inventa. Corpus cargado en `corpus/`.
@@ -114,8 +114,8 @@ Marca cada hito cuando lo termines. Los hitos siguen las sesiones del curso.
 ### Bitácora de avance semanal
 | Semana | Qué hice | Enlace/captura | Dudas para la clase |
 | --- | --- | --- | --- |
-| 1 | | | |
-| 2 | | | |
+| 1 | Creación del repositorio GitHub, configuración inicial del proyecto, definición del problema jurídico, usuarios, alcance y fuentes normativas de JuriEasy. | Repositorio GitHub y README actualizado. | Definir la arquitectura técnica de la herramienta y conexión con inteligencia artificial. |
+| 2 | Diseño inicial del asistente jurídico, definición del propósito de la IA y construcción de las instrucciones del sistema. | README y repositorio GitHub. | Cómo mejorar la precisión de las respuestas jurídicas. |
 | 3 | | | |
 | 4 | | | |
 | 5 | | | |
