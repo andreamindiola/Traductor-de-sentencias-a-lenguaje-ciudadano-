@@ -2,10 +2,9 @@
 
 **Pontificia Universidad Javeriana · 2026-II · Docente: Pedro Ardila**
 
-> **Estudiante:** [escribe aquí tu nombre completo]
-> **Nombre del proyecto:** [escribe aquí el nombre de tu herramienta]
-> **Fecha de inicio:** [AAAA-MM-DD]
-
+> **Estudiante:** Andrea Carolina Mindiola Rodríguez
+> **Nombre del proyecto:** Traductor de Sentencias a Lenguaje Ciudadano
+> **Fecha de inicio:** 2026-08-11
 ---
 
 Bienvenido/a a tu repositorio de proyecto. **Este archivo es tu tablero de mando**: aquí describes tu proyecto, planificas su desarrollo y dejas evidencia del avance. Lo vas a completar por partes, siguiendo el curso.
@@ -22,25 +21,82 @@ Bienvenido/a a tu repositorio de proyecto. **Este archivo es tu tablero de mando
 
 ### 1.1 El problema jurídico
 ¿Qué problema **real del derecho colombiano** resuelve tu herramienta? ¿Quién lo sufre hoy y cómo lo resuelve sin tu herramienta?
+Actualmente, muchas decisiones judiciales en Colombia utilizan un lenguaje técnico y especializado que dificulta su comprensión para ciudadanos que no tienen formación jurídica. Aunque las sentencias son documentos públicos, su interpretación suele requerir conocimientos en derecho, lo que limita el acceso efectivo de las personas a la información sobre decisiones que pueden afectar sus derechos.
+
+El proyecto busca solucionar esta dificultad mediante una herramienta de inteligencia artificial capaz de transformar sentencias judiciales complejas en explicaciones más sencillas y comprensibles. La herramienta permitirá identificar los aspectos principales de una decisión judicial: qué decidió el juez, a quién aplica la decisión y qué importancia o precedente jurídico puede generar.
 
 ### 1.2 Usuarios
 ¿Quién va a usarla? Describe a tu usuario ideal en una frase (ej. *"un arrendatario bogotano que le subieron el canon de arrendamiento más del límite legal"*). Recuerda que al final necesitas **al menos un usuario real** que la pruebe.
 
+La herramienta está dirigida principalmente a ciudadanos, estudiantes de derecho y personas interesadas en comprender decisiones judiciales sin necesidad de tener conocimientos avanzados en lenguaje jurídico.
+
+El usuario ideal es una persona que encuentra una sentencia judicial pública, pero tiene dificultades para entender su contenido, alcance y consecuencias prácticas. También puede ser utilizada como herramienta educativa para estudiantes que buscan aproximarse al análisis de jurisprudencia mediante explicaciones más accesibles.
+
 ### 1.3 Qué hace y qué NO hace (alcance)
 | ✅ Sí hace | ❌ No hace |
 | --- | --- |
-| [funcionalidad 1] | [fuera de alcance 1] |
-| [funcionalidad 2] | [fuera de alcance 2] |
+| Resume sentencias judiciales en un lenguaje claro y sencillo. | No reemplaza la asesoría de un abogado. |
+| Explica qué decidió el juez, a quién aplica la decisión y sus efectos principales. | No determina estrategias jurídicas para casos particulares. |
+| Identifica criterios relevantes y posibles precedentes de una sentencia. | No crea nuevas interpretaciones jurídicas ni modifica decisiones judiciales. |
+| Facilita la comprensión ciudadana de decisiones judiciales. | No sustituye la lectura completa de la sentencia original. |
 
 *Consejo de abogado: un alcance pequeño y perfecto vale más que uno grande y roto.*
 
 ### 1.4 Marco jurídico y fuentes
-¿Qué normas alimentan tu herramienta? Lista tu corpus normativo (leyes, decretos, sentencias — debe ser **pequeño y público**):
-- [ ] Norma/sentencia 1: [nombre + enlace]
-- [ ] Norma/sentencia 2: [nombre + enlace]
+
+La herramienta utilizará como base fuentes jurídicas públicas, oficiales y verificables del ordenamiento jurídico colombiano. Estas fuentes permitirán que la inteligencia artificial genere explicaciones fundamentadas en normas y decisiones judiciales reales.
+
+Las principales fuentes serán:
+
+- **Constitución Política de Colombia de 1991:** fuente principal del sistema jurídico colombiano, especialmente para identificar derechos fundamentales, principios constitucionales y reglas de interpretación.
+http://www.secretariasenado.gov.co/senado/basedoc/constitucion_politica_1991.html
+
+- **Corte Constitucional de Colombia:** fuente de sentencias relacionadas con derechos fundamentales, acciones constitucionales y desarrollo de principios constitucionales.
+
+  https://www.corteconstitucional.gov.co/
+
+- **Consejo de Estado:** fuente de jurisprudencia sobre asuntos administrativos, responsabilidad del Estado y control de legalidad de actuaciones públicas.
+
+  https://www.consejodeestado.gov.co/
+
+- **Corte Suprema de Justicia:** fuente de jurisprudencia en materias como derecho civil, penal y laboral.
+
+  https://cortesuprema.gov.co/
+
+- **Código Civil Colombiano:** fuente para el análisis de relaciones civiles, obligaciones, contratos, responsabilidad civil, bienes y demás instituciones del derecho privado.
+
+http://www.secretariasenado.gov.co/senado/basedoc/codigo_civil.html
+
+- **Código de Comercio:** fuente para asuntos relacionados con actividades mercantiles, sociedades, contratos comerciales y obligaciones entre comerciantes.
+http://www.secretariasenado.gov.co/senado/basedoc/codigo_comercio.html 
+
+- **Código Sustantivo del Trabajo:** fuente para el análisis de relaciones laborales, derechos de los trabajadores, obligaciones del empleador y conflictos derivados del contrato de trabajo.
+
+http://www.secretariasenado.gov.co/senado/basedoc/codigo_sustantivo_trabajo.html
+
+- **Código Penal Colombiano (Ley 599 de 2000):** fuente para el análisis de conductas delictivas, responsabilidad penal y consecuencias jurídicas de los delitos.
+
+http://www.secretariasenado.gov.co/senado/basedoc/ley_0599_2000.html 
+
+- **Código de Procedimiento Penal (Ley 906 de 2004):** fuente relacionada con las reglas del proceso penal colombiano, garantías procesales y etapas del procedimiento.
+
+http://www.secretariasenado.gov.co/senado/basedoc/ley_0906_2004.html
+
+- **Código de Procedimiento Administrativo y de lo Contencioso Administrativo – CPACA (Ley 1437 de 2011):** fuente para el análisis de actuaciones administrativas, medios de control ante la jurisdicción contencioso administrativa y responsabilidad del Estado.
+
+http://www.secretariasenado.gov.co/senado/basedoc/ley_1437_2011.html 
+
+El proyecto utilizará estas fuentes como referencia para facilitar la comprensión ciudadana de decisiones judiciales, manteniendo la diferencia entre una explicación en lenguaje sencillo y un análisis jurídico profesional.
 
 ### 1.5 Nombre y lema
 Un nombre corto para tu herramienta y una frase que explique qué hace (la usarás en la demo del día de presentaciones).
+
+**Nombre de la herramienta:** JuriEasy
+
+**Lema:**  
+"Del lenguaje jurídico complejo a explicaciones claras para todos."
+
+JuriEasy es una herramienta basada en inteligencia artificial que busca facilitar la comprensión ciudadana de las decisiones judiciales, transformando sentencias complejas en explicaciones accesibles sin reemplazar el análisis profesional del derecho.
 
 ---
 
