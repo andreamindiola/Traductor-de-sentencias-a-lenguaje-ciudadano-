@@ -106,7 +106,7 @@ Marca cada hito cuando lo termines. Los hitos siguen las sesiones del curso.
 
 - [x] **M0 — Descripción y plan** *(con Sesión 1)*: Partes 1 y 2 de este README completas.
 - [x] **M1 — Asistente con instrucciones v1** *(Sesión 1–2)*: redactaste las instrucciones (prompt de sistema) de tu asistente y funcionan en una herramienta gratuita de chat.
-- [ ] **M2 — Casos de prueba documentados** *(Sesión 2)*: tienes al menos 5 casos de prueba (donde antes fallaba) con resultados guardados en `docs/casos-de-prueba.md`.
+- [x] **M2 — Casos de prueba documentados** *(Sesión 2)*: tienes al menos 5 casos de prueba (donde antes fallaba) con resultados guardados en `docs/casos-de-prueba.md`.
 - [ ] **M3 — Corpus conectado (RAG)** *(Sesión 3)*: tu asistente **cita la fuente** normativa que usa y no inventa. Corpus cargado en `corpus/`.
 - [ ] **M4 — Interfaz web desplegada** *(Sesión 4)*: tu herramienta tiene **URL pública** (ver Parte 4) y tu primer usuario real la probó con evidencia.
 - [ ] **M5 — Análisis crítico y demo** *(Sesión 5)*: Parte 7 completada + presentación de 5 minutos.
@@ -116,7 +116,7 @@ Marca cada hito cuando lo termines. Los hitos siguen las sesiones del curso.
 | --- | --- | --- | --- |
 | 1 | Creación del repositorio GitHub, configuración inicial del proyecto, definición del problema jurídico, usuarios, alcance y fuentes normativas de JuriEasy. | Repositorio GitHub y README actualizado. | Definir la arquitectura técnica de la herramienta y conexión con inteligencia artificial. |
 | 2 | Creación del prompt de sistema inicial de JuriEasy, definiendo su rol, reglas jurídicas, estructura de respuestas y advertencias éticas. | Archivo docs/prompt-sistema.md y repositorio GitHub. | Cómo conectar el asistente con fuentes jurídicas verificables. |
-| 3 | | | |
+| 3 | Creación y documentación de casos de prueba para evaluar el funcionamiento de JuriEasy y sus límites frente a información jurídica no verificable. | Archivo docs/casos-de-prueba.md y repositorio GitHub. | Cómo conectar fuentes jurídicas reales para mejorar las respuestas. |
 | 4 | | | |
 | 5 | | | |
 
