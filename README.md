@@ -243,11 +243,11 @@ Responde con total honestidad — aquí es donde demuestras tu criterio jurídic
 
 Requisitos de entrega del curso — todos deben estar ✅:
 
-- [ ] 🔗 **Solución funcionando**: resuelve el problema jurídico y está desplegada con URL pública.
-- [ ] 👤 **Usuario real**: al menos una persona externa al curso la usó, con evidencia (video corto o testimonio). Guarda la evidencia en `docs/evidencia-usuario.md`.
-- [ ] 📦 **Repositorio con historial**: este repo muestra tus avances semanales (commits + bitácora).
-- [ ] 🧠 **Análisis crítico**: Parte 7 completada.
-- [ ] 📋 Partes 1–7 de este README completas y al día.
+- [x] 🔗 **Solución funcionando**: resuelve el problema jurídico y está desplegada con URL pública.
+- [x] 👤 **Usuario real**: al menos una persona externa al curso la usó, con evidencia (video corto o testimonio). Guarda la evidencia en `docs/evidencia-usuario.md`.
+- [x] 📦 **Repositorio con historial**: este repo muestra tus avances semanales (commits + bitácora).
+- [x] 🧠 **Análisis crítico**: Parte 7 completada.
+- [x] 📋 Partes 1–7 de este README completas y al día.
 
 ---
 
