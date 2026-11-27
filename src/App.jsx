@@ -88,11 +88,15 @@ function App() {
         </div>
       )}
 
-      {resultado && (
-        <div className="resultado">
-          <h2>📄 Resultado del análisis ciudadano</h2>
-          <div className="respuesta-ia">{resultado}</div>
-        </div>
+     {resultado && (
+  <div className="resultado">
+    <h2>📄 Resultado del análisis ciudadano</h2>
+    <div
+      className="respuesta-ia"
+      dangerouslySetInnerHTML={{ __html: resultado }}
+    />
+  </div>
+)}
       )}
     </div>
   );
