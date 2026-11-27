@@ -108,8 +108,8 @@ Marca cada hito cuando lo termines. Los hitos siguen las sesiones del curso.
 - [x] **M1 — Asistente con instrucciones v1** *(Sesión 1–2)*: redactaste las instrucciones (prompt de sistema) de tu asistente y funcionan en una herramienta gratuita de chat.
 - [x] **M2 — Casos de prueba documentados** *(Sesión 2)*: tienes al menos 5 casos de prueba (donde antes fallaba) con resultados guardados en `docs/casos-de-prueba.md`.
 - [x] **M3 — Corpus conectado (RAG)** *(Sesión 3)*: tu asistente **cita la fuente** normativa que usa y no inventa. Corpus cargado en `corpus/`.
-- [ ] **M4 — Interfaz web desplegada** *(Sesión 4)*: tu herramienta tiene **URL pública** (ver Parte 4) y tu primer usuario real la probó con evidencia.
-- [ ] **M5 — Análisis crítico y demo** *(Sesión 5)*: Parte 7 completada + presentación de 5 minutos.
+- [x] **M4 — Interfaz web desplegada** *(Sesión 4)*: tu herramienta tiene **URL pública** (ver Parte 4) y tu primer usuario real la probó con evidencia.
+- [x] **M5 — Análisis crítico y demo** *(Sesión 5)*: Parte 7 completada + presentación de 5 minutos.
 
 ### Bitácora de avance semanal
 | Semana | Qué hice | Enlace/captura | Dudas para la clase |
@@ -117,8 +117,8 @@ Marca cada hito cuando lo termines. Los hitos siguen las sesiones del curso.
 | 1 | Creación del repositorio GitHub, configuración inicial del proyecto, definición del problema jurídico, usuarios, alcance y fuentes normativas de JuriEasy. | Repositorio GitHub y README actualizado. | Definir la arquitectura técnica de la herramienta y conexión con inteligencia artificial. |
 | 2 | Creación del prompt de sistema inicial de JuriEasy, definiendo su rol, reglas jurídicas, estructura de respuestas y advertencias éticas. | Archivo docs/prompt-sistema.md y repositorio GitHub. | Cómo conectar el asistente con fuentes jurídicas verificables. |
 | 3 | Creación del corpus jurídico inicial con normas colombianas para alimentar el asistente JuriEasy y reducir respuestas no verificadas. | Carpeta corpus/ del repositorio GitHub. | Cómo implementar la conexión entre el corpus y el modelo de inteligencia artificial. |
-| 4 | | | |
-| 5 | | | |
+| 4 |Desarrollo de la interfaz web de JuriEasy con React y Vite. Integración de inteligencia artificial mediante OpenRouter, configuración de la API Key como variable de entorno y desarrollo del servidor para procesar sentencias judiciales. Implementación de respuestas estructuradas en lenguaje ciudadano y publicación de la aplicación en Vercel.|Repositorio GitHub y https://traductor-de-sentencias-a-lenguaje.vercel.app|¿Cómo implementar la lectura de documentos PDF, conectar un corpus jurídico verificable y mejorar la precisión de las respuestas?|
+| 5 |Evaluación del funcionamiento de JuriEasy mediante casos de prueba, identificación de limitaciones de la inteligencia artificial y análisis de los riesgos jurídicos y éticos. Preparación de la demostración final del proyecto.|Evidencias de pruebas, testimonio de usuario y documento de análisis crítico|¿Cómo evaluar la confiabilidad de las explicaciones generadas por inteligencia artificial y garantizar la trazabilidad de las fuentes jurídicas?|
 
 ---
 
