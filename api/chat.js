@@ -11,14 +11,7 @@ export default async function handler(req, res) {
       return res.status(400).json({
         error: "Ingresa una sentencia para analizar."
       });
-    }
-
-    if (sentencia.length > 30000) {
-      return res.status(413).json({
-        error: "El texto supera el límite de 30.000 caracteres."
-      });
-    }
-
+    
     const apiKey = process.env.OPENROUTER_API_KEY;
 
     if (!apiKey) {
@@ -97,3 +90,4 @@ Esta herramienta es un ejercicio académico que no constituye asesoría legal ni
     });
   }
 }
+
