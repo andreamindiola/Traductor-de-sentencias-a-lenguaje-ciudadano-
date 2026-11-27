@@ -1,22 +1,25 @@
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Método no permitido" });
+    return res.status(405).json({
+      error: "Método no permitido"
+    });
   }
 
   try {
     const { sentencia } = req.body || {};
 
-    if (!sentencia?.trim()) {
+    if (!sentencia || !sentencia.trim()) {
       return res.status(400).json({
-        error: "Ingresa una sentencia para analizar."
+        error: "Debes ingresar una sentencia."
       });
-    
+    }
+
     const apiKey = process.env.OPENROUTER_API_KEY;
 
     if (!apiKey) {
       return res.status(500).json({
-        error: "La clave de OpenRouter aún no está configurada."
+        error: "La clave de OpenRouter no está configurada."
       });
     }
 
@@ -25,7 +28,7 @@ export default async function handler(req, res) {
       {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${apiKey}`,
+          Authorization: `Bearer ${apiKey}`,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -33,28 +36,28 @@ export default async function handler(req, res) {
           messages: [
             {
               role: "system",
-              content: `Eres JuriEasy, asistente académico especializado en explicar sentencias colombianas en lenguaje ciudadano.
+              content: `Eres JuriEasy, un asistente especializado en explicar sentencias judiciales colombianas en lenguaje ciudadano.
 
-Explica la sentencia con esta estructura:
+Organiza tu respuesta así:
 
 1. Contexto del caso.
 2. Hechos principales.
 3. Problema jurídico.
 4. Decisión judicial.
 5. Fundamentos jurídicos.
-6. ¿A quién aplica?
-7. Importancia o precedente.
+6. Explicación en lenguaje ciudadano.
+7. Importancia de la decisión.
 
 REGLAS:
-- Usa lenguaje claro y sencillo.
+- Utiliza lenguaje claro y sencillo.
 - No inventes normas, artículos ni sentencias.
 - No inventes citas ni fuentes.
-- Distingue lo que dice la sentencia de tus explicaciones.
+- Distingue los hechos de tus explicaciones.
 - Si falta información, dilo expresamente.
-- Si no puedes verificar una afirmación, adviértelo.
-- No presentes el resultado como asesoría jurídica.
+- Si no puedes verificar una afirmación jurídica, adviértelo.
+- Conserva el sentido jurídico de la sentencia.
 
-ADVERTENCIA OBLIGATORIA:
+ADVERTENCIA:
 Esta herramienta es un ejercicio académico que no constituye asesoría legal ni sustituye la consulta con un abogado.`
             },
             {
@@ -70,11 +73,13 @@ Esta herramienta es un ejercicio académico que no constituye asesoría legal ni
 
     if (!respuesta.ok) {
       return res.status(502).json({
-        error: datos.error?.message || "Error al consultar la inteligencia artificial."
+        error: datos.error?.message ||
+          "Error al consultar OpenRouter."
       });
     }
 
-    const resultado = datos.choices?.[0]?.message?.content;
+    const resultado =
+      datos.choices?.[0]?.message?.content;
 
     if (!resultado) {
       return res.status(502).json({
@@ -82,12 +87,15 @@ Esta herramienta es un ejercicio académico que no constituye asesoría legal ni
       });
     }
 
-    return res.status(200).json({ resultado });
+    return res.status(200).json({
+      resultado
+    });
 
   } catch (error) {
+    console.error("Error en JuriEasy:", error);
+
     return res.status(500).json({
-      error: "Error de conexión. Intenta nuevamente."
+      error: "Error interno del servidor. Revisa los registros de Vercel."
     });
   }
 }
-
