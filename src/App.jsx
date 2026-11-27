@@ -1,125 +1,101 @@
+
 import { useState } from "react";
 import "./App.css";
 
 function App() {
-
   const [sentencia, setSentencia] = useState("");
-  const [resultado, setResultado] = useState(null);
+  const [resultado, setResultado] = useState("");
+  const [cargando, setCargando] = useState(false);
+  const [error, setError] = useState("");
 
-
-  function traducirSentencia() {
-
-    if(sentencia.trim() === ""){
-      alert("Por favor ingrese una sentencia");
+  async function traducirSentencia() {
+    if (!sentencia.trim()) {
+      setError("Por favor, ingresa una sentencia.");
       return;
     }
 
+    setCargando(true);
+    setError("");
+    setResultado("");
 
-    setResultado({
+    try {
+      const respuesta = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ sentencia })
+      });
 
-      decision:
-      "La decisión judicial resolvió el conflicto presentado, determinando los derechos y obligaciones de las partes involucradas.",
+      const datos = await respuesta.json();
 
+      if (!respuesta.ok) {
+        throw new Error(datos.error || "No fue posible analizar la sentencia.");
+      }
 
-      aplica:
-      "La decisión aplica principalmente a las personas, entidades o situaciones que tengan relación con los hechos analizados por el juez.",
+      setResultado(datos.resultado);
 
-
-      precedente:
-      "El fallo establece un criterio jurídico que puede servir como orientación para resolver futuros casos similares."
-
-    });
-
+    } catch (err) {
+      setError(err.message || "Error de conexión. Intenta nuevamente.");
+    } finally {
+      setCargando(false);
+    }
   }
 
-
   return (
-
     <div className="contenedor">
-
-
       <h1>
-        ⚖️ Traductor de Sentencias
-        <br/>
-        a Lenguaje Ciudadano
+        ⚖️ JuriEasy
+        <br />
+        Traductor de Sentencias
       </h1>
 
-
       <p>
-        Herramienta que transforma decisiones judiciales
-        complejas en explicaciones sencillas para ciudadanos.
+        Del lenguaje jurídico complejo a explicaciones claras para todos.
       </p>
 
+      <p>
+        Comprende las decisiones judiciales colombianas
+        mediante inteligencia artificial.
+      </p>
+
+      <div className="advertencia">
+        Esta herramienta es un ejercicio académico que no constituye
+        asesoría legal ni sustituye la consulta con un abogado.
+      </div>
 
       <textarea
-
-        placeholder="Pegue aquí el texto de una sentencia judicial..."
-
+        placeholder="Pega aquí el texto de una sentencia judicial..."
         value={sentencia}
-
-        onChange={(e)=>setSentencia(e.target.value)}
-
+        onChange={(e) => setSentencia(e.target.value)}
+        disabled={cargando}
       />
 
+      <br />
 
-      <br/>
-
-
-      <button onClick={traducirSentencia}>
-        Analizar sentencia
+      <button onClick={traducirSentencia} disabled={cargando}>
+        {cargando ? "Analizando sentencia..." : "⚖️ Analizar sentencia"}
       </button>
 
-
-
-      {resultado && (
-
-        <div className="resultado">
-
-
-          <h2>
-            📄 Resumen ciudadano
-          </h2>
-
-
-          <h3>
-            ¿Qué decidió?
-          </h3>
-
-          <p>
-            {resultado.decision}
-          </p>
-
-
-
-          <h3>
-            ¿A quién aplica?
-          </h3>
-
-          <p>
-            {resultado.aplica}
-          </p>
-
-
-
-          <h3>
-            ¿Qué precedente deja?
-          </h3>
-
-          <p>
-            {resultado.precedente}
-          </p>
-
-
-        </div>
-
+      {cargando && (
+        <p>La inteligencia artificial está analizando el documento. Espera un momento...</p>
       )}
 
+      {error && (
+        <div className="resultado">
+          <h3>Atención</h3>
+          <p>{error}</p>
+        </div>
+      )}
 
+      {resultado && (
+        <div className="resultado">
+          <h2>📄 Resultado del análisis ciudadano</h2>
+          <div className="respuesta-ia">{resultado}</div>
+        </div>
+      )}
     </div>
-
   );
-
 }
-
 
 export default App;
